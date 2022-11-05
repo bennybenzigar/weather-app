@@ -1,0 +1,12 @@
+.logos{
+    width: 40px;
+    height: 40px;
+   left: 0;
+   border-radius: 20px;
+}
+
+.container-fluid{
+    display: flex;
+    justify-content: left;
+ 
+}

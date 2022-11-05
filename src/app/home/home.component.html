@@ -1,0 +1,40 @@
+<!-- <img class="img-fluid img"  src="assets/HD-Weather-Wallpapers.jpg" alt=""> -->
+<div class="container-fluid mt-5">
+    
+    <div class="container-fluid  maindiv mt-2">
+        <form [formGroup]="cityDetails "class="forms m-2 ">
+            
+            <input class="form-Control bg-transparent border border-primary py-4 text-white w-75 me-2 text-center mt-4" formControlName="id" type="text" placeholder="please enter city name">
+            <button class="btn btn-lg btn-primary mt-4" (click)=" postCityData()">search</button>
+        </form>
+    
+    
+    
+    </div>
+    <div *ngIf="cityData"  class="container  ">
+        <h1 class="bg-white rounded text-center text-dark uppercase border-radius-5">{{cityData.name}}</h1>
+        <div class="row datadiv mt-1">
+            <div class="col-3"><img  class="img-fluid w-50" src="assets/images.png" alt=""></div>
+    
+            <div class="col-9"> <p class="text-white text-uppercase"><span>TEMPERATURE:   </span>{{cityData.main.temp}}</p></div>
+        </div>
+        <div class="row datadiv mt-1">
+            <div class="col-3"><img  class="img-fluid w-50" src="assets/wind.jpg" alt=""></div>
+    
+            <div class="col-9"> <p class="text-white"><span>COUNTRY:   </span>{{cityData.sys.country}}</p></div>
+        </div>
+        <div class="row datadiv mt-1">      
+            <div class="col-3"><img  class="img-fluid w-50" src="assets/country.jpg" alt=""></div>
+    
+            <div class="col-9"> <p class="text-white"><span>WIND-SPEED:   </span>{{cityData.wind.speed}}km/hr</p></div>
+        </div>
+    
+        <div class="row datadiv mt-1">
+            <div class="col-3"><img  class="img-fluid w-50" src="assets/globe.jpg" alt=""></div>
+    
+            <div class="col-9"> <p class="text-white"><span>LAT & LON:   </span>{{cityData.coord.lon}}, {{cityData.coord.lat}}</p></div>
+        </div>
+       
+        <p></p>
+    </div>
+</div>
