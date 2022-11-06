@@ -13,6 +13,8 @@ export class HomeComponent implements OnInit {
   cityDetails!:FormGroup
   cityObject:CityModel=new CityModel
   cityData!:any
+  temp!:number
+  
  
   constructor(private formBuilder:FormBuilder, private api:ApiService) { }
 
@@ -30,7 +32,7 @@ export class HomeComponent implements OnInit {
 
  this.api.get().subscribe((res:any)=>{
 this.cityData=res
-
+this.temp=Number(Math.floor(this.cityData.main.temp))-273
 console.log(this.cityData)
  })
   }

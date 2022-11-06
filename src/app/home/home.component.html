@@ -1,8 +1,29 @@
 <!-- <img class="img-fluid img"  src="assets/HD-Weather-Wallpapers.jpg" alt=""> -->
-<div class="container-fluid mt-5">
-    
-    <div class="container-fluid  maindiv mt-2">
-        <form [formGroup]="cityDetails "class="forms m-2 ">
+<div  id="carouselExampleInterval" class="carousel slide mt-5" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="2000">
+        <img src="assets/c3.jpg" class="d-block w-100 imgg" alt="...">
+      </div>
+      <div class="carousel-item" data-bs-interval="2000">
+        <img src="assets/c2.jpg" class="d-block w-100 imgg" alt="...">
+      </div>
+      <div class="carousel-item" data-bs-interval="2000">
+        <img src="assets/c1.jpg" class="d-block w-100 imgg" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+<div class="container-fluid mt-1">
+    <h1 *ngIf="cityData" class="bg-white rounded text-center text-dark uppercase border-radius-5">{{cityData.name}}</h1>
+    <div class="container-fluid  maindiv mt-1 pb-5">
+        <form [formGroup]="cityDetails "class="forms m-1 ">
             
             <input class="form-Control bg-transparent border border-primary py-4 text-white w-75 me-2 text-center mt-4" formControlName="id" type="text" placeholder="please enter city name">
             <button class="btn btn-lg btn-primary mt-4" (click)=" postCityData()">search</button>
@@ -12,11 +33,11 @@
     
     </div>
     <div *ngIf="cityData"  class="container  ">
-        <h1 class="bg-white rounded text-center text-dark uppercase border-radius-5">{{cityData.name}}</h1>
+        
         <div class="row datadiv mt-1">
             <div class="col-3"><img  class="img-fluid w-50" src="assets/images.png" alt=""></div>
     
-            <div class="col-9"> <p class="text-white text-uppercase"><span>TEMPERATURE:   </span>{{cityData.main.temp}}</p></div>
+            <div class="col-9"> <p class="text-white text-uppercase temp"><span >TEMPERATURE:   </span>{{temp}} &deg;C</p></div>
         </div>
         <div class="row datadiv mt-1">
             <div class="col-3"><img  class="img-fluid w-50" src="assets/wind.jpg" alt=""></div>
